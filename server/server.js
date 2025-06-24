@@ -5,6 +5,7 @@ import user_router from './Routes/route.js';
 import team_router from './Routes/route.js';
 import task_router from './Routes/route.js';
 import project_router from './Routes/route.js';
+import { getAllTeams } from './Controllers/Team.js';
 
 dotenv.config();
 const app = express();
@@ -25,9 +26,13 @@ mongoose.connect(
 });
 
 app.get('/', (req, res) => { res.send('Welcome to API.') });
+app.get('/api/team/getallteam', (req, res) => {
+    getAllTeams
+});
+
 app.use('/api/task', task_router);
 app.use('/api/team', team_router);
 app.use('/api/users', user_router);
 app.use('/api/project', project_router);
 
-app.listen(PORT, () => {console.log(PORT)});
+app.listen(PORT);
