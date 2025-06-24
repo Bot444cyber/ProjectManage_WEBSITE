@@ -55,7 +55,7 @@ const Register = () => {
         }
     
         try {
-            const response = await axios.post('/api/users/sign_up', formData);
+            const response = await axios.post('/api/sign_up', formData);
             console.log("Response:", response.data);
              
             setFormData({

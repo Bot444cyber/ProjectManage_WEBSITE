@@ -89,7 +89,7 @@ const Home = () => {
 
     try {
       const decoded = jwtDecode(token);
-      const response = await axios.get(`/api/users/getuserbyid/${decoded.userId}`);
+      const response = await axios.get(`/api/getuserbyid/${decoded.userId}`);
       setOriginalUser({
         name: response.data.name,
         email: response.data.email

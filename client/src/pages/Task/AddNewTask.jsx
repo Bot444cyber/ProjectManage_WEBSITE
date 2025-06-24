@@ -32,7 +32,7 @@ const AddNewTask = () => {
   useEffect(() => {
     const fetchUser = async() => {
       try {
-        const response = await axios.get('/api/users/getalluser')
+        const response = await axios.get('/api/getalluser')
         setteamMembers(response.data)
       } 
       catch (error) {
@@ -90,7 +90,7 @@ const AddNewTask = () => {
       };
 
       // Make API request
-      const response = await axios.post('/api/task/createtask', taskData, {
+      const response = await axios.post('/api/createtask', taskData, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

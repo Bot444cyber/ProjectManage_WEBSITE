@@ -58,7 +58,7 @@ router.delete('/deletetaskbyid/:id', deleteTaskById);
 
 // Team routes
 router.get('/getallteam', getAllTeams);
-router.get('/:id', getTeamById);
+router.get('/getteambyid/:id', getTeamById);
 router.post('/createteam', createTeam);
 router.delete('/:id', deleteTeam);
 

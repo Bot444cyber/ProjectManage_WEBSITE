@@ -41,7 +41,7 @@ const AddNewProject = () => {
         }
 
         // Fetch available users
-        const response = await axios.get('/api/users/getalluser', {
+        const response = await axios.get('/api/getalluser', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -134,7 +134,7 @@ const AddNewProject = () => {
         createdBy: decoded.userId // Make sure this matches your JWT structure
       };
   
-      const response = await axios.post('/api/project/createproject', payload, {
+      const response = await axios.post('/api/createproject', payload, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

@@ -18,7 +18,7 @@ const Team = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        const response = await axios.get('/api/team/getallteam');
+        const response = await axios.get('/api/getallteam');
         setTeams(Array.isArray(response?.data) ? response.data : []);
         setLoading(false);
       } catch (err) {
@@ -36,7 +36,7 @@ const Team = () => {
     const fetchUsers = async () => {
       try {
         setUserLoading(true);
-        const response = await axios.get('/api/users/getalluser');
+        const response = await axios.get('/api/getalluser');
         setUsers(Array.isArray(response?.data) ? response.data : []);
       } catch (err) {
         setError(err.response?.data?.message || err.message);
@@ -54,7 +54,7 @@ const Team = () => {
     
     try {
       setActionLoading(true);
-      const response = await axios.post('/api/team/createteam', {
+      const response = await axios.post('/api/createteam', {
         name: newTeamName
       });
       
@@ -72,7 +72,7 @@ const Team = () => {
   const removeTeam = async (teamId) => {
     try {
       setActionLoading(true);
-      await axios.delete(`/api/team/${teamId}`);
+      await axios.delete(`/api/getteambyid/${teamId}`);
       setTeams(prevTeams => prevTeams.filter(team => team._id !== teamId));
     } catch (err) {
       setError(err.response?.data?.message || err.message);
@@ -90,7 +90,7 @@ const Team = () => {
   
     try {
       setActionLoading(true);
-      const response = await axios.post('/api/team/addmember', {
+      const response = await axios.post('/api/addmember', {
         teamId: selectedTeam,
         userId: userId
       });
@@ -112,7 +112,7 @@ const Team = () => {
   const removeMemberFromTeam = async (teamId, memberId) => {
     try {
       setActionLoading(true);
-      const response = await axios.post('/api/team/removemember', {
+      const response = await axios.post('/api/removemember', {
         teamId,
         memberId
       });

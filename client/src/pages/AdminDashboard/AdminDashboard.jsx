@@ -41,7 +41,7 @@ const AdminDashboard = () => {
     const fetchUsers = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/users/getalluser/');
+        const response = await axios.get('/api/getalluser');
         const userData = response.data.map(user => ({
           ...user,
           joinDate: new Date(user.joinDate).toLocaleDateString()
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
     try {
       setSaveLoading(true);
       const response = await axios.post(
-        `/api/users/updateuserbyid/${selectedUser._id}`, 
+        `/api/updateuserbyid/${selectedUser._id}`, 
         selectedUser
       );
       
@@ -136,7 +136,7 @@ const AdminDashboard = () => {
       if (!confirmDelete) return;
 
       setDeleteLoading(true);
-      const response = await axios.delete(`/api/users/deleteuserbyid/${id}`);
+      const response = await axios.delete(`/api/deleteuserbyid/${id}`);
       
       // Update UI without reloading the page
       const updatedUsers = users.filter(user => user._id !== id);

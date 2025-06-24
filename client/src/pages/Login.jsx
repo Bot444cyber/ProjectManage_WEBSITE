@@ -3,9 +3,6 @@ import '../assets/styles/login.css';
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "@fortawesome/fontawesome-free/css/all.min.css"; 
-import dotenv from "dotenv";
-
-dotenv.config();
 
 export default function Login() {
     const [email, setEmail] = useState("")
@@ -22,7 +19,7 @@ export default function Login() {
         e.preventDefault()
         const data = { email, password, rememberMe }
       
-        axios.post('/api/users/sign_in', data)
+        axios.post('/api/sign_in', data)
           .then((response) => {
             if(response.data.tokken) {
                 localStorage.setItem('token', JSON.stringify(response.data.tokken))

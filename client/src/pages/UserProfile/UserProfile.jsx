@@ -61,7 +61,7 @@ const UserProfile = () => {
     const fetchUserData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`/api/users/getuserbyid/${userId}`)
+        const response = await axios.get(`/api/getuserbyid/${userId}`)
         
         const userData = response.data;
         setUser({
@@ -109,7 +109,7 @@ const UserProfile = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        `/api/users/updateuserbyid/${userId}`,
+        `/api/updateuserbyid/${userId}`,
         {
           name: user.name,
           email: user.email,

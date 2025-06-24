@@ -23,9 +23,9 @@ const Dashboard = () => {
         
         // Fetch all necessary data in parallel
         const [projectsRes, tasksRes, usersRes] = await Promise.all([
-          axios.get('/api/project/getproject'),
-          axios.get('/api/task/getalltask'),
-          axios.get('/api/users/getalluser')
+          axios.get('/api/getproject'),
+          axios.get('/api/getalltask'),
+          axios.get('/api/getalluser')
         ]);
 
         const projectsData = projectsRes.data;

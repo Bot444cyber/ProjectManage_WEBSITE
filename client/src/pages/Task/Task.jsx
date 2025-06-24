@@ -26,7 +26,7 @@ const Task = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('/api/task/getalltask');
+        const response = await axios.get('/api/getalltask');
         
         // Handle different response formats
         let tasksData = [];
@@ -67,7 +67,7 @@ const Task = () => {
       );
       setTasks(updatedTasks);
 
-      await axios.post(`/api/task/updatetaskbyid/${taskId}`, {
+      await axios.post(`/api/updatetaskbyid/${taskId}`, {
         status: newStatus
       });
     } catch (err) {
@@ -79,7 +79,7 @@ const Task = () => {
   // Delete task
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`/api/task/deletetaskbyid/${taskId}`);
+      await axios.delete(`/api/deletetaskbyid/${taskId}`);
       setTasks(tasks.filter(task => task._id !== taskId));
     } catch (err) {
       console.error('Error deleting task:', err);

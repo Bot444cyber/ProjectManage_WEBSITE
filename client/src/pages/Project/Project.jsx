@@ -12,7 +12,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('/api/project/getproject');
+        const response = await axios.get('/api/getproject');
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects:', error.message);
