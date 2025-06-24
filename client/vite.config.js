@@ -7,9 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: "https://backend-delta-sable.vercel.app",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        target: import.meta.env.URL_BACKEND
       },
     },
   }
