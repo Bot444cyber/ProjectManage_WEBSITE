@@ -26,10 +26,6 @@ mongoose.connect(
 });
 
 app.get('/', (req, res) => { res.send('Welcome to API.') });
-app.get('/api/team/getallteam', (req, res) => {
-    getAllTeams
-});
-
 app.use('/api/task', task_router);
 app.use('/api/team', team_router);
 app.use('/api/users', user_router);

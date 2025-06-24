@@ -6,10 +6,12 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': {
-        target: 'https://backend-two-ebon-67.vercel.app',
-      }
-    }
+      "/api": {
+        target: "https://your-vercel-app.vercel.app",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   }
 })
 
