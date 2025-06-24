@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:1000',
+        target: 'https://backend-two-ebon-67.vercel.app',
       }
     }
   }
