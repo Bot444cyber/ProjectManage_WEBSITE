@@ -5,7 +5,6 @@ import user_router from './Routes/route.js';
 import team_router from './Routes/route.js';
 import task_router from './Routes/route.js';
 import project_router from './Routes/route.js';
-import { getAllTeams } from './Controllers/Team.js';
 
 dotenv.config();
 const app = express();

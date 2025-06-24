@@ -19,7 +19,7 @@ export default function Login() {
         e.preventDefault()
         const data = { email, password, rememberMe }
       
-        axios.post(`${import.meta.env.URL_BACKEND}/api/users/sign_in`, data)
+        axios.post('/api/users/sign_in', data)
           .then((response) => {
             if(response.data.tokken) {
                 localStorage.setItem('token', JSON.stringify(response.data.tokken))
