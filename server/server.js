@@ -21,6 +21,15 @@ mongoose.connect(
     console.log('Error occure during DB Connection.')
 });
 
+const corsOptions = {
+    origin: [
+      process.env.URL_FRONTEND,
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+};
+app.use(cors());
+
 app.get('/', (req, res) => { res.send('Welcome to API.') });
 app.use('/api', router);
 
