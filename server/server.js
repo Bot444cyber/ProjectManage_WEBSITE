@@ -22,7 +22,7 @@ mongoose.connect(
 
 const corsOptions = {
     origin: [
-      'client-three-sepia-49.vercel.app',
+      process.env.URL_FRONTEND,
       'http://localhost:3000',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
