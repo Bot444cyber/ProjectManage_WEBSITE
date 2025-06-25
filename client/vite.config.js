@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: 'https://server-psi-rosy-93.vercel.app'
+        target: 'https://server-ten-alpha-73.vercel.app'
       },
     },
   }
